@@ -1,21 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 body{
-    background: #444;
+    background-image: url('images/background2.png');
+    background-size: 100% 100%;  /* ✅ stretches to fit exactly */
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .card {
     width: 100%;
     max-width: 470px;
-    background: linear-gradient(135deg, #00feba, #5b548a);
+    backdrop-filter: blur(10px);           /* makes the card blur */
     color: #fff;
-    margin: 100px auto 0;
-    border-radius: 20px;
-    padding: 40px 35px;
+    margin: 0;
+    margin-left: auto;
+    margin-right: 0;
+    padding: 35px 35px;
     text-align: center;
+    height: 100vh;
 }
 .search{
     width: 100%;
@@ -26,11 +32,10 @@ body{
 .search input{
     border: 0;
     outline: 0;
-    background: #ebfffc;
-    color: #555;
+    background: transparent;
+    color: #6e1818;
     padding: 10px 25px;
     height: 60px;
-    border-radius: 30px;
     flex: 1;
     margin-right: 16px;
     font-size: 18px;
@@ -38,7 +43,7 @@ body{
 .search button{
     border: 0;
     outline: 0;
-    background: #ebfffc;
+    background: #babdbc;
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -47,46 +52,78 @@ body{
 .search button img{
     width: 16px;
 }
-.weather-icon{
-    width: 170px;
-    margin-top: 30px ;
+.weather {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    color: #fff;
+    display: flex;           /* ✅ makes temp, city and icon side by side */
+    flex-direction: row;
+    align-items: flex-end;   /* ✅ aligns everything to the bottom */
+    gap: 20px;
 }
-.weather h1{
-    font-size: 80px;
-    font-weight: 500;
+.weather .material-symbols-outlined{
+    font-size: 50px;     /* ✅ make it bigger */
+    margin-bottom: 30px;
+    width: 100px;
 }
+.weather h1 {
+    font-size: 100px;        /* ✅ big temp like design */
+    font-weight: 400;        /* ✅ thin font like design */
+    margin: 0;
+    line-height: 1;
+}
+
 .weather h2 {
-    font-size: 80px;
-    font-weight: 500;
-    margin-top: -10px;
+    font-size: 50px;         /* ✅ city name size */
+    font-weight: 400;
+    margin: 0;
+}
+.weather .date {
+    font-size: 13px;
+    opacity: 0.7;
+    margin: 0;
+}
+.city-info {
+    display: flex;
+    flex-direction: column;  /* ✅ city on top, date below */
+    justify-content: flex-end;
+    gap: 5px;
+    font-weight: 400;
 }
 .details{
     display:flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    padding: 0 20px;
+    flex-direction: column;  /* ✅ humidity row on top, wind row below */
+    gap: 20px;
+    padding: 20px;
     margin-top: 50px;
+    width: 100%;
 }
 .col{
     display:flex;    /* allows Humidity to wrap below */
-    align-items: center;
     text-align: center;
-    flex-direction: column;
+    flex-direction: row;    /* ✅ makes Humidity and icon side by side */
+    gap: 80px;
 }
-.col-top {
-    display: flex;           /* icon and number side by side */
-    flex-direction: row;
-    align-items: center;
-    gap: 15px;
-}
+
 .col img{
     width:40px;
 }
-.col > p{
-    margin-top: 14px;
+.col .humiditytext{
+    color: rgb(63, 61, 61);
+    margin-top: 300px;
 }
-.humidity, .wind{
-    font-size: 28px;
-    margin-top: -6px;
+.col .windtext{
+    color: rgb(63, 61, 61);
+    margin-top: 8px;
+}
+.col .humidity{
+    color: #ffffff;
+    font-size: 15px;
+    margin-top: 300px;
+}
+.col .wind{
+    color: #ffffff;
+    font-size: 15px;
+    margin-top: 6px;
 }

@@ -5,39 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WEATHER-APPv3</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=rainy" />
 </head>
 <body>
-    
+
+    <!-- ✅ left side - outside the card -->
+    <div class="weather">
+        <h1 class="temp">25°</h1>
+        <div class = "city-info">
+            <h2 class="city">New York</h2>
+            <p class="date">06:09 - Sunday, 6 Oct '19</p>
+        </div>
+        <span class="material-symbols-outlined">
+rainy
+</span>
+    </div>
+
+    <!-- ✅ right side - the card -->
     <div class="card">
         <div class="search">
             <input id="cityInput" placeholder="Enter city name" spellcheck="false">
-            <button id="getWeatherBtn"><img src="images/search.png" ></button>
+            <button id="getWeatherBtn"><img src="images/search.png"></button>
         </div>
-        <div class="weather">
-            <img src="images/rain.png" class="weather-icon">
-            <h1 class="temp">25°C</h1>
-            <h2 class="city">New York</h2>
-            
 
-            <div class="details">
-                <div class="col">
-                    <div class="col-top">
-                        <img src="images/humidity.png" class="humidity-icon">
-                        <p class="humidity">50%</p>
-                    </div>
-                    <p>Humidity</p>
-                </div>
-                <div class="col">
-                    <div class="col-top">
-                        <img src="images/wind.png" class="wind-icon">
-                        <p class="wind">15 km/h</p>
-                    </div>
-                    <p>Wind Speed</p>
+        <h1 class="title-weatherDetails">Weather-details</h1>
+
+        <div class="details">
+            <div class="col">
+                <p class="humiditytext">Humidity</p>
+                    <p class="humidity">50%</p>
+            </div>
+            <div class="col">
+                <p class="windtext">Wind Speed</p>
+                    <p class="wind">15 km/h</p>
                 </div>
             </div>
         </div>
     </div>
-
 
     <script src="app.js"></script>
 </body>
