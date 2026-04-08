@@ -1,20 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
-body{
-    background-image: url('images/background2.png');
-    background-size: 100% 100%;  /* ✅ stretches to fit exactly */
+
+body {
+    background-image: url('images/SatelliteView.png');
+    background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
 }
+
 .card {
     width: 100%;
     max-width: 470px;
-    backdrop-filter: blur(10px);           /* makes the card blur */
+    backdrop-filter: blur(90px) saturate(100%);
     color: #fff;
     margin: 0;
     margin-left: auto;
@@ -23,107 +26,136 @@ body{
     text-align: center;
     height: 100vh;
 }
-.search{
+
+.search {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    color: white;
 }
-.search input{
+.search input::placeholder {
+    color:#fff;  /* White color - change to any color you want */
+    opacity: 0.7;    /* Optional: makes it slightly transparent */
+}
+
+.search input {
     border: 0;
     outline: 0;
     background: transparent;
-    color: #6e1818;
+    color: #615d5d;
     padding: 10px 25px;
     height: 60px;
     flex: 1;
     margin-right: 16px;
     font-size: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    width: 30%;  /* ← Change this number (50% to 100%) */
 }
-.search button{
+
+.search button {
     border: 0;
     outline: 0;
-    background: #babdbc;
-    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 0px;
     width: 60px;
     height: 60px;
     cursor: pointer;
 }
-.search button img{
+
+.search button img {
     width: 16px;
 }
+
+/* Weather Details Title */
+.title-weatherDetails {
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 30px 0 20px 0;
+    opacity: 0.8;
+    margin-top: 60%;
+}
+
+/* Details Section with Lines */
+.details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Each row with divider line */
+.col {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Remove border from last item */
+.details .col:last-child {
+    border-bottom: none;
+}
+
+/* Left side text (labels) */
+.humiditytext, .windtext {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* Right side values */
+.humidity, .wind {
+    color: #ffffffad;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Weather section (left side) - keep as is */
 .weather {
     position: absolute;
-    bottom: 30px;
-    left: 30px;
+    bottom: 70px;
+    left: 70px;
     color: #fff;
-    display: flex;           /* ✅ makes temp, city and icon side by side */
+    display: flex;
     flex-direction: row;
-    align-items: flex-end;   /* ✅ aligns everything to the bottom */
+    align-items: flex-end;
     gap: 20px;
+    margin-left: 20px;     /* Move right */
 }
-.weather .material-symbols-outlined{
-    font-size: 50px;     /* ✅ make it bigger */
+
+.weather .material-symbols-outlined {
+    font-size: 50px;
     margin-bottom: 30px;
     width: 100px;
 }
+
 .weather h1 {
-    font-size: 100px;        /* ✅ big temp like design */
-    font-weight: 400;        /* ✅ thin font like design */
+    font-size: 105px;
+    font-weight: 410;
     margin: 0;
     line-height: 1;
 }
 
 .weather h2 {
-    font-size: 50px;         /* ✅ city name size */
+    font-size: 50px;
     font-weight: 400;
     margin: 0;
 }
+
 .weather .date {
     font-size: 13px;
     opacity: 0.7;
     margin: 0;
 }
+
 .city-info {
     display: flex;
-    flex-direction: column;  /* ✅ city on top, date below */
+    flex-direction: column;
     justify-content: flex-end;
     gap: 5px;
     font-weight: 400;
-}
-.details{
-    display:flex;
-    flex-direction: column;  /* ✅ humidity row on top, wind row below */
-    gap: 20px;
-    padding: 20px;
-    margin-top: 50px;
-    width: 100%;
-}
-.col{
-    display:flex;    /* allows Humidity to wrap below */
-    text-align: center;
-    flex-direction: row;    /* ✅ makes Humidity and icon side by side */
-    gap: 80px;
-}
-
-.col img{
-    width:40px;
-}
-.col .humiditytext{
-    color: rgb(63, 61, 61);
-    margin-top: 300px;
-}
-.col .windtext{
-    color: rgb(63, 61, 61);
-    margin-top: 8px;
-}
-.col .humidity{
-    color: #ffffff;
-    font-size: 15px;
-    margin-top: 300px;
-}
-.col .wind{
-    color: #ffffff;
-    font-size: 15px;
-    margin-top: 6px;
 }
